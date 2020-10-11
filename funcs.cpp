@@ -10,7 +10,7 @@ void test_ascii()
 	std::cout << "input a word: ";
 	string in;
 	std::cin >> in;
-	for (char x: in)
+	for (char x : in)
 	{
 		std::cout << x << " " << (int)x << std::endl;
 	}
@@ -31,4 +31,19 @@ char shiftChar(char c, int rshift)
 	return c;
 }
 
+string encryptCaesar(string plaintext, int rshift)
+{
+	string out = "";
+	for (char x : plaintext)
+	{
+		if (isalpha(x))
+		{
+			out += shiftChar(x, rshift);
+		}
+		else
+		{
+			out += x;
+		}
+	}
+	return out;
 }
