@@ -18,5 +18,17 @@ void test_ascii()
 
 char shiftChar(char c, int rshift)
 {
-	return (char) (c + rshift);
+	if (islower(c))
+	{
+		return (char)((((c - 97) + rshift) % 26) + 97);
+
+	}
+	else if (isupper(c))
+	{
+		return (char)((((c - 65) + rshift) % 26) + 65);
+	}
+	
+	return c;
+}
+
 }
