@@ -21,13 +21,12 @@ char shiftChar(char c, int rshift)
 	if (islower(c))
 	{
 		return (char)((((c - 97) + rshift) % 26) + 97);
-
 	}
 	else if (isupper(c))
 	{
 		return (char)((((c - 65) + rshift) % 26) + 65);
 	}
-	
+
 	return c;
 }
 
@@ -55,9 +54,9 @@ int chartoint(char in)
 
 string encryptVigenere(string plaintext, string keyword)
 {
-	string out = ""; 
+	string out = "";
 	int keyc = 0;
-	for (char x: plaintext)
+	for (char x : plaintext)
 	{
 		if (isalpha(x))
 		{
@@ -68,7 +67,31 @@ string encryptVigenere(string plaintext, string keyword)
 		{
 			out += x;
 		}
-		
+	}
+	return out;
+}
+
+std::string decryptCaesar(std::string ciphertext, int rshift)
+{
+	return encryptCaesar(ciphertext, -1 * rshift);
+}
+
+
+std::string decryptVigenere(std::string ciphertext, std::string keyword)
+{
+	string out = "";
+	int keyc = 0;
+	for (char x : ciphertext)
+	{
+		if (isalpha(x))
+		{
+			out += shiftChar(x, -1 * chartoint(keyword[keyc % keyword.length()]));
+			keyc++;
+		}
+		else
+		{
+			out += x;
+		}
 	}
 	return out;
 }
