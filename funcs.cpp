@@ -47,3 +47,28 @@ string encryptCaesar(string plaintext, int rshift)
 	}
 	return out;
 }
+
+int chartoint(char in)
+{
+	return ((tolower(in) - 97) % 26);
+}
+
+string encryptVigenere(string plaintext, string keyword)
+{
+	string out = ""; 
+	int keyc = 0;
+	for (char x: plaintext)
+	{
+		if (isalpha(x))
+		{
+			out += shiftChar(x, chartoint(keyword[keyc % keyword.length()]));
+			keyc++;
+		}
+		else
+		{
+			out += x;
+		}
+		
+	}
+	return out;
+}
