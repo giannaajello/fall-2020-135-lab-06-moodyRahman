@@ -3,8 +3,8 @@
 main: main.o funcs.o
 	g++ -o main main.o funcs.o
 
-tests: tests.o 
-	g++ -o tests tests.o 
+tests: tests.o funcs.o
+	g++ -o tests tests.o funcs.o
 
 
 funcs.o: funcs.cpp funcs.h

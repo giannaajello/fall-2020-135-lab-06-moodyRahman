@@ -24,8 +24,8 @@ int main()
 
   string out = encryptCaesar("Way to Go!", 5);
 
-  moodtest("encryptCeasar(\"abcde123!?\", 1)", encryptCaesar("abcde123!?", 1), "bcdef123!?");
-  moodtest("decryptCeaser(\"bcdef123!?\")", decryptCaesar("bcdef123!?", 1), "abcde123!?");
+  moodtest("encryptCeasar(abcde123!?ZXY, 1)", encryptCaesar("abcde123!?ZXY", 1), "bcdef123!?AYZ");
+  moodtest("decryptCeaser(bcdef123!?)", decryptCaesar("bcdef123!?", 1), "abcde123!?");
 
   return 0;
 }
