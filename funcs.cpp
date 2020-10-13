@@ -16,15 +16,21 @@ void test_ascii()
 	}
 }
 
+int encryptmod(int a, int b)
+{
+	return (a % b + b) % b;
+}
+
 char shiftChar(char c, int rshift)
 {
+	
 	if (islower(c))
 	{
-		return (char)((((c - 97) + rshift) % 26) + 97);
+		return encryptmod(((c - 97) + rshift) , 26) + 97;
 	}
 	else if (isupper(c))
 	{
-		return (char)((((c - 65) + rshift) % 26) + 65);
+		return encryptmod(((c - 65) + rshift) , 26) + 65;
 	}
 
 	return c;
