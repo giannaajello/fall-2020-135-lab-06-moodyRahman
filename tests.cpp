@@ -18,3 +18,8 @@ TEST_CASE("ceasar decrypt")
 	CHECK(decryptCaesar("bcdef123!?AYZ", 1) == "abcde123!?ZXY");
 }
 
+TEST_CASE("debugs")
+{
+	CHECK(shiftChar('a', 1) == 'b');
+	CHECK(shiftChar('a', -1) == 'z');
+}
