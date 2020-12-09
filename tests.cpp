@@ -16,10 +16,14 @@ TEST_CASE("ceasar encrypt")
 TEST_CASE("ceasar decrypt")
 {
 	CHECK(decryptCaesar("bcdef123!?AYZ", 1) == "abcde123!?ZXY");
+	CHECK(decryptCaesar("ifmmp", 1) == "hello");
+	CHECK(decryptCaesar("vguvkpi", 2) == "testing");
 }
 
 TEST_CASE("debugs")
 {
 	CHECK(shiftChar('a', 1) == 'b');
 	CHECK(shiftChar('a', -1) == 'z');
+	CHECK(shiftChar('b', 1) == 'c');
+	CHECK(shiftChar('c', -1) == 'b');
 }
